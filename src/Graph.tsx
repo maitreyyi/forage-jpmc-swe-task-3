@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Table } from '@finos/perspective';
+import { Table, TableData } from '@finos/perspective';
 import { ServerRespond } from './DataStreamer';
 import { DataManipulator } from './DataManipulator';
 import './Graph.css';
@@ -26,9 +26,9 @@ class Graph extends Component<IProps, {}> {
       price_abc: 'float',
       price_def: 'float',
       ratio: 'float',
+      timestamp: 'date',
       upper_bound: 'float',
       lower_bound: 'float',
-      timestamp: 'date',
       trigger_alert: 'float',
     };
 
@@ -45,9 +45,9 @@ class Graph extends Component<IProps, {}> {
         price_abc: 'avg',
         price_def: 'avg',
         ratio: 'avg',
+        timestamp: 'distinct count',
         upper_bound: 'avg',
         lower_bound: 'avg',
-        timestamp: 'distinct count',
         trigger_alert: 'avg',
       }));
     }
